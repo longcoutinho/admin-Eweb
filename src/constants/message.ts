@@ -1,5 +1,5 @@
 export const PAGE = {
-    TITLE: 'Capital Shop'
+    TITLE: 'Admin Web'
 }
 
 export const COMMON_TEXT = {
