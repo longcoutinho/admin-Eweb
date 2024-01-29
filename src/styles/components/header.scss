@@ -9,12 +9,6 @@ $black-color: #141517;
     justify-content: space-between;
     align-items: center;
     //logo
-    .logo-wrapper {
-      width: 12%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
     .logo-wrapper:hover {
       cursor: pointer;
     }
@@ -164,4 +158,22 @@ $black-color: #141517;
 .shop-now-wrapper {
   margin-left: 5px;
   border-bottom: 2px solid #CEBD9C;
+}
+
+.hori-header-container {
+  width: 20%;
+  height: 100vh;
+  background-color: rgb(60,75,100);
+  .logo-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+  }
 }

@@ -16,6 +16,7 @@ import {Post, Item, Service, TypePost} from "@/interfaces/response";
 import {useEffect, useRef, useState} from "react";
 import { useRouter } from "next/router";
 import {useDispatch} from "react-redux";
+import HorizonHeader from "@/components/horiHeader/HorizonHeader";
 <link rel="preconnect" href="https://fonts.gstatic.com"></link>;
 
 export default function Home() {
