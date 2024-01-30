@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Box} from "@mui/material";
+import {Box, Link} from "@mui/material";
 import {menuBar} from "@/constants/menu";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAngleDown} from "@fortawesome/free-solid-svg-icons";
@@ -39,7 +39,7 @@ export default function Menu() {
             }
             {menuElement.child?.map((menuChild, index2) => (
                 <Box key={index2} sx={{padding: "5px", border: "1px solid white", color: "white", display: displayMatrix[index] == 0 ? "none" : "flex" }}>
-                    <p>{menuChild}</p>
+                    <Link href="/item">{menuChild}</Link>
                 </Box>
             ))}
         </Box>
