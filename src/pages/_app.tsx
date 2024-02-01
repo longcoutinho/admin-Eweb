@@ -5,6 +5,8 @@ import "@/styles/pages/login.scss"
 import "@/styles/pages/signup.scss"
 import "@/styles/pages/item.scss"
 import "@/styles/pages/profile.scss"
+import "@/styles/pages/dashboard.scss"
+import "@/styles/pages/item-type.scss"
 import type { AppProps } from "next/app";
 import {Provider} from "react-redux";
 import {combineReducers, createStore} from "redux";

@@ -4,6 +4,17 @@ import {faImage} from "@fortawesome/free-solid-svg-icons";
 export const menuBar =
     [
         {
+            type: 2,
+            title: "dashboard",
+            icon: faShop,
+            child: [
+                {
+                    title: "dashboard",
+                    url: "/dashboard"
+                }
+            ]
+        },
+        {
             type: 1,
             icon: faImage,
             title: "banner",
@@ -14,8 +25,8 @@ export const menuBar =
             icon: faShop,
             child: [
                 {
-                    title: "item type",
-                    url: "/item"
+                    title: "config item type",
+                    url: "/item-type"
                 }
             ]
         },

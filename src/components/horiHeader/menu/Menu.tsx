@@ -16,7 +16,7 @@ export default function Menu() {
         else {
             for(let i = 0; i < menuBar.length; i++) {
                 if (menuBar[i].child == null) {
-                    initMatrix[i] = 1;
+                    initMatrix[i] = 0;
                 }
                 else {
                     initMatrix[i] = 0;
@@ -45,7 +45,7 @@ export default function Menu() {
                 </Box>
             }
             {menuElement.child?.map((menuChild, index2) => (
-                <Box className="menu-element-child-container" key={index2} sx={{display: displayMatrix[index] == 0 ? "none" : "flex" }}>
+                <Box className="menu-element-child-container" key={index2} sx={{display: displayMatrix[index] == 1 ? "flex" : "none" }}>
                     <Link href={menuChild.url}>{menuChild.title}</Link>
                 </Box>
             ))}
