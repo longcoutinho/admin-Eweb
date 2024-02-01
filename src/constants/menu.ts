@@ -1,50 +1,66 @@
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
+import {faShop} from "@fortawesome/free-solid-svg-icons";
+import {faImage} from "@fortawesome/free-solid-svg-icons";
 export const menuBar =
     [
-      {
-          type: 1,
-          icon: faSearch,
-          title: "theme",
-      },
-      {
-          type: 2,
-          title: "component",
-          icon: faSearch,
-          child: [
-              "base",
-              "button"
-          ]
-      },
+        {
+            type: 1,
+            icon: faImage,
+            title: "banner",
+        },
         {
             type: 2,
-            title: "item",
-            icon: faSearch,
+            title: "banners management",
+            icon: faShop,
             child: [
-                "base",
-                "button"
+                {
+                    title: "item type",
+                    url: "/item"
+                }
             ]
+        },
+        {
+          type: 1,
+          icon: faShop,
+          title: "collection",
+        },
+        {
+          type: 2,
+          title: "items management",
+          icon: faShop,
+          child: [
+              {
+                  title: "item type",
+                  url: "/item"
+              },
+              {
+                  title: "collection",
+                  url: "/post"
+              },
+              {
+                  title: "Hot item",
+                  url: "/post"
+              }
+          ]
         },
         {
             type: 1,
             icon: faSearch,
-            title: "theme",
+            title: "Blog",
         },
         {
             type: 2,
-            title: "component",
+            title: "Posts Management",
             icon: faSearch,
             child: [
-                "base",
-                "button"
+                {
+                    title: "item",
+                    url: "/item"
+                },
+                {
+                    title: "post",
+                    url: "/post"
+                }
             ]
-        },
-        {
-            type: 2,
-            title: "item",
-            icon: faSearch,
-            child: [
-                "base",
-                "button"
-            ]
-        },
+        }
     ];
