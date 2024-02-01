@@ -118,3 +118,19 @@ export const saveUserToSessionStorage = (userInfo: User) => {
         sessionStorage.setItem("user-info", JSON.stringify(userInfo));
     }
 }
+
+export const saveDisplayMenuToSessionStorage = (displayArr: number[]) => {
+    if (typeof window !== 'undefined') {
+        // Perform localStorage action
+        sessionStorage.setItem("display-menu", JSON.stringify(displayArr));
+    }
+}
+
+export const getDisplayMenu = (): number[] => {
+    if (typeof window !== 'undefined') {
+        const displayArr = sessionStorage.getItem("display-menu");
+        if (displayArr == null) return [];
+        return JSON.parse(displayArr);
+    }
+    return [];
+}

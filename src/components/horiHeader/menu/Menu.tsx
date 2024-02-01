@@ -3,27 +3,34 @@ import {Box, Link} from "@mui/material";
 import {menuBar} from "@/constants/menu";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAngleDown} from "@fortawesome/free-solid-svg-icons";
+import {getDisplayMenu, saveDisplayMenuToSessionStorage} from "@/constants/FnCommon";
 
 export default function Menu() {
     const [displayMatrix, setDisplayMatrix] = useState<number[]>([]);
 
     useEffect(() => {
-        let initMatrix = [];
-        for(let i = 0; i < menuBar.length; i++) {
-            if (menuBar[i].child == null) {
-                initMatrix[i] = 1;
-            }
-            else {
-                initMatrix[i] = 0;
-            }
+        let initMatrix = getDisplayMenu();
+        if (initMatrix?.length) {
+            setDisplayMatrix(initMatrix);
         }
-        setDisplayMatrix(initMatrix);
+        else {
+            for(let i = 0; i < menuBar.length; i++) {
+                if (menuBar[i].child == null) {
+                    initMatrix[i] = 1;
+                }
+                else {
+                    initMatrix[i] = 0;
+                }
+            }
+            setDisplayMatrix(initMatrix);
+        }
     }, [])
 
     const switchDisplayComponent = (ind: number) => {
         let newMatrix = displayMatrix;
         newMatrix[ind] = 1 - newMatrix[ind];
         setDisplayMatrix([...newMatrix]);
+        saveDisplayMenuToSessionStorage(newMatrix);
     }
 
     const listMenu = menuBar.map((menuElement, index) => (
