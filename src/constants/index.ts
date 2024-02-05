@@ -3,8 +3,8 @@ import {PATH_PAGE} from "@/routes/path";
 
 export enum Backend {
   URL = 'https://fengshui.ntg55.click',
-  USER_SERVICE = "http://localhost:8989/user"
-  // URL = 'http://10.248.158.167:1112'
+  USER_SERVICE = "http://localhost:8989/user",
+  ITEM_SERVICE = "http://localhost:8989/item"
 }
 
 export enum HTTP_STATUS {

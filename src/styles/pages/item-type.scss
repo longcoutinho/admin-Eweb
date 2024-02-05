@@ -3,6 +3,7 @@
   .item-type-title {
     color: black;
     font-size: 20px;
+
   }
   .add-item {
     border: 1px solid black;
@@ -12,6 +13,15 @@
     }
   }
   .add-item:hover {
+    cursor: pointer;
+  }
+  .item-type-level-container {
+    border: 1px solid black;
+    display: inline-block;
+    padding: 5px 10px;
+  }
+  .item-type-level-container:hover {
+    background-color: gray;
     cursor: pointer;
   }
 }
@@ -65,4 +75,11 @@
   div {
     width: 100%;
   }
+}
+
+.item-type-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
 }
