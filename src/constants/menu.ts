@@ -41,7 +41,7 @@ export const menuBar =
           icon: faShop,
           child: [
               {
-                  title: "item type",
+                  title: "edit item",
                   url: "/item"
               },
               {
