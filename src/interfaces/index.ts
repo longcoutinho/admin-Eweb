@@ -14,5 +14,8 @@ export interface IPageProps {
 }
 
 export interface User {
-  username: string
+  username: string;
+  fullName: string;
+  email: string;
+  phoneNumber: string;
 }

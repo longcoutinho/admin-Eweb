@@ -18,22 +18,14 @@ export default function ItemTypeComponent() {
     const [itemLevel, setItemLevel] = useState(0);
     const [listItemLv1, setListItemLv1] = useState<ItemType[]>([]);
     const [listItemLv2, setListItemLv2] = useState<ItemType[]>([]);
-    const [parentId, setParentId] = useState<number>();
+    const [parentId, setParentId] = useState<number>(0);
 
     useEffect(() => {
         getLv1ItemType();
-        getItemTypeByLevel(2).then(
-            (res) => {
-                if (res.status == HTTP_STATUS.OK) {
-                    setListItemLv2(res.data);
-                }
-            }).catch((err) => {
-            console.log(err);
-        });
     }, [])
 
     const getLv1ItemType = () => {
-        getItemTypeByLevel(1).then(
+        getItemTypeByLevel(1, null).then(
             (res) => {
                 if (res.status == HTTP_STATUS.OK) {
                     setListItemLv1(res.data);
@@ -43,6 +35,23 @@ export default function ItemTypeComponent() {
         });
     }
 
+    const getLv2ItemType = (parent: number) => {
+        getItemTypeByLevel(2, parent).then(
+            (res) => {
+                if (res.status == HTTP_STATUS.OK) {
+                    setListItemLv2(res.data);
+                }
+            }).catch((err) => {
+            console.log(err);
+        });
+    }
+
+    const changeParentId = (parent: number) => {
+        console.log(parent);
+        setParentId(parent);
+        getLv2ItemType(parent);
+    }
+
     return (
         <Page title={PAGE_TITLE.HOME} menuIndex={1}>
             <Box className="item-type-page-content" sx={{ width: "100vw" }}>
@@ -50,7 +59,7 @@ export default function ItemTypeComponent() {
                 <Box className="item-type-content-wrapper">
                     {
                         listItemLv1.map((itemType, index) => (
-                            <Box onClick={() => setParentId(itemType.itemTypeId)} className="item-type-level-container" key={index}>
+                            <Box sx={{backgroundColor: itemType.itemTypeId == parentId ? 'gray' : 'white'}} onClick={() => changeParentId(itemType.itemTypeId)} className="item-type-level-container" key={index}>
                                 <p style={{color: 'black'}}>{itemType.name}</p>
                             </Box>
                         ))
@@ -64,22 +73,25 @@ export default function ItemTypeComponent() {
                     </Box>
                 </Box>
                 <p className="item-type-title">Item Type Level 2</p>
-                <Box className="item-type-content-wrapper">
-                    {
-                        listItemLv2.map((itemType, index) => (
+                {
+                    parentId == 0 ? <p className="item-type-title">Choose an item type level 1</p> :
+                        <Box className="item-type-content-wrapper">
+                            {
+                            listItemLv2.map((itemType, index) => (
                             <Box className="item-type-level-container" key={index}>
                                 <p style={{color: 'black'}}>{itemType.name}</p>
                             </Box>
-                        ))
-                    }
-                    <Box className="add-item" onClick={() => {
-                        setOpenItemBox(openAddItemBox + 1)
-                        setItemLevel(2);
-                    }
-                    }>
-                        <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
-                    </Box>
-                </Box>
+                            ))
+                            }
+                            <Box className="add-item" onClick={() => {
+                                setOpenItemBox(openAddItemBox + 1)
+                                setItemLevel(2);
+                            }
+                            }>
+                                <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
+                            </Box>
+                        </Box>
+                }
             </Box>
             <AddItemBox resetLv1={getLv1ItemType} parentId={parentId} open={openAddItemBox} itemLevel={itemLevel}></AddItemBox>
         </Page>

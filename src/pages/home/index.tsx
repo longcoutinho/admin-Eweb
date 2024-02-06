@@ -3,7 +3,6 @@ import {listServicesTitle, HomePage, PostsService, ItemService} from "@/constant
 import {formatVND} from "@/constants/FnCommon";
 import {getAllPosts, getServicePosts} from "@/services/postsService"
 import {getTypeofPosts} from "@/services/typeService";
-import {getAllItems} from "@/services/itemService";
 import Page from "@/layouts";
 import { Box, Button} from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -493,13 +492,6 @@ export default function Home() {
         const [listItems, setListItems] = useState<Item[]>([]);
 
         useEffect(() => {
-            //Get data all items
-            getAllItems().then(
-                (res) => {
-                    setListItems(res.data.content);
-                },
-                (err) => {
-                });
         }, []);
 
         const goToDetailItem = (id: any) => {
