@@ -35,15 +35,13 @@ export default function Menu() {
 
     const listMenu = menuBar.map((menuElement, index) => (
         <Box key={index} className="menu-element-wrapper">
-            {menuElement.type == 1 ? <p className="menu-element-title">{menuElement.title}</p> :
                 <Box onClick={() => switchDisplayComponent(index)} className="menu-element-content">
                     <FontAwesomeIcon icon={menuElement.icon}></FontAwesomeIcon>
                     <Box>
                         <p>{menuElement.title}</p>
                     </Box>
-                    <FontAwesomeIcon className="angle-down-icon" icon={faAngleDown}></FontAwesomeIcon>
+                    <FontAwesomeIcon style={{display: menuElement.child?.length ? "block" : "none"}} className="angle-down-icon" icon={faAngleDown}></FontAwesomeIcon>
                 </Box>
-            }
             {menuElement.child?.map((menuChild, index2) => (
                 <Box className="menu-element-child-container" key={index2} sx={{display: displayMatrix[index] == 1 ? "flex" : "none" }}>
                     <Link href={menuChild.url}>{menuChild.title}</Link>
