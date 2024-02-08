@@ -7,7 +7,7 @@ export const createNewItemType = async (request: ItemType) : Promise<any> => {
     return doPostRequest(url, request);
 }
 
-export const getItemTypeByLevel = async (level: number, parentId: number | null) : Promise<any> => {
+export const getItemTypeByLevelAndParentId = async (level: number, parentId: number | null) : Promise<any> => {
     const url = Backend.ITEM_SERVICE + '/type';
     const params = {
         level: level,
