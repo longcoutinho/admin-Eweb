@@ -6,3 +6,11 @@ export interface ItemType {
   itemTypeId: number;
 }
 
+export interface Item {
+  price: number;
+  name : string;
+  lv1Id: number;
+  lv2Id: number | null;
+  listImages: File;
+}
+

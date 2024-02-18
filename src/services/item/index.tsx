@@ -1,6 +1,6 @@
 import {Backend} from "@/constants";
-import {doGetRequest, doPostRequest} from "@/constants/FnCommon";
-import {ItemType} from "@/interfaces/request";
+import {doFileRequest, doGetRequest, doPostRequest} from "@/constants/FnCommon";
+import {Item, ItemType} from "@/interfaces/request";
 
 export const createNewItemType = async (request: ItemType) : Promise<any> => {
     const url = Backend.ITEM_SERVICE + '/type/create';
@@ -14,4 +14,9 @@ export const getItemTypeByLevelAndParentId = async (level: number, parentId: num
         parentId: parentId
     }
     return doGetRequest(url, params);
+}
+
+export const createNewItem = async (request: FormData) : Promise<any> => {
+    const url = Backend.ITEM_SERVICE + '/create';
+    return doFileRequest(url, request);
 }

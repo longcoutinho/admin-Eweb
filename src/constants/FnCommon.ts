@@ -30,6 +30,15 @@ export const doPostRequest = (url: string, data: any): any => {
     });
 }
 
+export const doFileRequest = (url: string, data: any): any => {
+    return axios({
+        method: "post",
+        url: url,
+        data: data,
+        headers: { "Content-Type": "multipart/form-data" },
+    });
+}
+
 export const doGetRequest = (url: string, params: any): any => {
     return axios({
         method: "get",

@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "@/constants/FnCommon"
 import React, {useState} from "react";
-import {createNewItemType} from "@/services/itemService";
+import {createNewItemType} from "../../../../services/item";
 import {ItemType} from "@/interfaces/request";
 import {HTTP_STATUS} from "@/constants";
 

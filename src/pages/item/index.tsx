@@ -24,8 +24,8 @@ export default function ItemManagement() {
 
     return (
         <Page title={PAGE_TITLE.HOME} menuIndex={1}>
-            <ItemTypeComponent level={1} parentId={null} changeParentChooseItemId={changeParentChooseItemId}></ItemTypeComponent>
-            <ItemTypeComponent level={2} parentId={itemLevel1} changeParentChooseItemId={changeParentChooseItemId}></ItemTypeComponent>
+            <ItemTypeComponent display={true} level={1} parentId={null} changeParentChooseItemId={changeParentChooseItemId}></ItemTypeComponent>
+            <ItemTypeComponent display={true} level={2} parentId={itemLevel1} changeParentChooseItemId={changeParentChooseItemId}></ItemTypeComponent>
             <ListItem></ListItem>
         </Page>
   );

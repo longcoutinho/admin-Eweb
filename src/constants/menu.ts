@@ -15,7 +15,7 @@ export const menuBar =
                 },
                 {
                     title: "add product",
-                    url: "/item"
+                    url: "/item/add-item"
                 }
             ]
         },

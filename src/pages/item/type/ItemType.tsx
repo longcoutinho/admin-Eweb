@@ -9,7 +9,7 @@ import React, {useEffect, useState} from "react";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {ItemType} from "@/interfaces/request";
-import {getItemTypeByLevelAndParentId} from "@/services/itemService";
+import {getItemTypeByLevelAndParentId} from "../../../services/item";
 import AddItemType from "@/pages/item/type/add/AddItemType";
 
 export default function ItemTypeComponent(props: any) {
@@ -66,13 +66,14 @@ export default function ItemTypeComponent(props: any) {
                                         </Box>
                                     ))
                                 }
-                                <Box className="add-item" onClick={() => setOpenItemBox(true)}>
+                                <Box sx={{display: props.display ? 'inline-block' : 'none !important'}} className="add-item" onClick={() => setOpenItemBox(true)}>
                                     <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
                                 </Box>
                             </Box>
                     }
             </Box>
-            <AddItemType renderListItem={renderListItem}
+            <AddItemType
+                         renderListItem={renderListItem}
                          parentId={props.parentId}
                          open={openAddItemBox}
                          itemLevel={props.level}
