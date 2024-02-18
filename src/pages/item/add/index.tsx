@@ -7,7 +7,7 @@ import "@/constants/FnCommon"
 import React, {useState} from "react";
 import {HTTP_STATUS, PAGE_TITLE} from "@/constants";
 import Page from "@/layouts";
-import ItemTypeComponent from "@/pages/item/type/ItemType";
+import ItemTypeComponent from "@/components/item/categories/all/ItemType";
 import {createNewItem} from "@/services/item";
 
 export default function AddItemComponent() {

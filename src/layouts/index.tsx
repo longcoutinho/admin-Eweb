@@ -19,7 +19,7 @@ const Page = (props: any) => {
                   <title>{PAGE_TITLE.PREFIX + title}</title>
               </Head>
               <HorizonHeader></HorizonHeader>
-              <Box sx={{width: "80%"}}>
+              <Box className="p-20 w-4/5">
                   {/*<Header></Header>*/}
                   {children}
               </Box>

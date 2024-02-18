@@ -9,8 +9,8 @@ import React, {useEffect, useState} from "react";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {ItemType} from "@/interfaces/request";
-import {getItemTypeByLevelAndParentId} from "../../../services/item";
-import AddItemType from "@/pages/item/type/add/AddItemType";
+import {getItemTypeByLevelAndParentId} from "../../../../services/item";
+import AddItemType from "@/components/item/categories/add/AddItemType";
 
 export default function ItemTypeComponent(props: any) {
     const [openAddItemBox, setOpenItemBox] = useState(false);
@@ -49,13 +49,12 @@ export default function ItemTypeComponent(props: any) {
 
     return (
         <Box>
-            <Box className="item-type-page-content"
-                 sx={{ width: "100vw" }}>
-                <p className="item-type-title">Item Type Level {props.level}</p>
+            <Box className="item-type-page-content">
+                <p className="item-type-title">Type Level {props.level}</p>
                     {
                         (props.level == 2 && (props.parentId == undefined || null))
-                        ? <p>Choose an item type level 1</p> :
-                            <Box className="item-type-content-wrapper">
+                        ? <p className="py-2 px-5">Choose an item type level 1</p> :
+                            <Box className="item-type-content-wrapper py-2 px-5">
                                 {
                                     listItem.map((itemType, index) => (
                                         <Box sx={{backgroundColor: itemType.itemTypeId == chosenId ? 'gray' : 'white'}}

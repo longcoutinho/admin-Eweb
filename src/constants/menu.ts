@@ -7,15 +7,15 @@ export const menuBar =
             child: [
                 {
                     title: "categories",
-                    url: "/item"
+                    url: "/item/categories"
                 },
                 {
                     title: "all products",
-                    url: "/item"
+                    url: "/item/all"
                 },
                 {
                     title: "add product",
-                    url: "/item/add-item"
+                    url: "/item/add"
                 }
             ]
         },

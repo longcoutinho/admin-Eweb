@@ -6,10 +6,10 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "@/constants/FnCommon"
 import React, {useState} from "react";
-import ItemTypeComponent from "@/pages/item/type/ItemType";
-import ListItem from "@/pages/item/list-item/ListItem";
+import ItemTypeComponent from "@/components/item/categories/all/ItemType";
+import AllItem from "@/components/item/all/AllItem";
 
-export default function ItemManagement() {
+export default function Categories() {
     const [itemLevel1, setItemLevel1] = useState<number>();
     const [itemLevel2, setItemLevel2] = useState<number>();
 
@@ -26,7 +26,7 @@ export default function ItemManagement() {
         <Page title={PAGE_TITLE.HOME} menuIndex={1}>
             <ItemTypeComponent display={true} level={1} parentId={null} changeParentChooseItemId={changeParentChooseItemId}></ItemTypeComponent>
             <ItemTypeComponent display={true} level={2} parentId={itemLevel1} changeParentChooseItemId={changeParentChooseItemId}></ItemTypeComponent>
-            <ListItem></ListItem>
+            <AllItem></AllItem>
         </Page>
-  );
+    );
 }
