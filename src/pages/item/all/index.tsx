@@ -7,6 +7,7 @@ import "swiper/css/scrollbar";
 import "@/constants/FnCommon"
 import React, {useState} from "react";
 import ItemTypeComponent from "@/components/item/categories/all/ItemType";
+import AllItem from "@/components/item/all/AllItem";
 
 export default function ListItem() {
     const [itemLevel1, setItemLevel1] = useState<number>();
@@ -23,8 +24,9 @@ export default function ListItem() {
 
     return (
         <Page title={PAGE_TITLE.HOME} menuIndex={1}>
-            <ItemTypeComponent display={true} level={1} parentId={null} changeParentChooseItemId={changeParentChooseItemId}></ItemTypeComponent>
-            <ItemTypeComponent display={true} level={2} parentId={itemLevel1} changeParentChooseItemId={changeParentChooseItemId}></ItemTypeComponent>
+            <ItemTypeComponent display={false} level={1} parentId={null} changeParentChooseItemId={changeParentChooseItemId}></ItemTypeComponent>
+            <ItemTypeComponent display={false} level={2} parentId={itemLevel1} changeParentChooseItemId={changeParentChooseItemId}></ItemTypeComponent>
+            <AllItem lv1Id={itemLevel1} lv2Id={itemLevel2}></AllItem>
         </Page>
   );
 }

@@ -29,13 +29,17 @@ export default function AllItem(props: any) {
     }
 
     return (
-        <Box>
+        <Box className="flex-row flex-wrap gap-10 p-10">
             {
                 listItems.map((item, index) => (
-                    <Box key={index}>
-                        <p className="text-black">{item.name}</p>
-                        <p className="text-black">{item.price}</p>
-                        <img src="http://localhost:8989/image/4"/>
+                    <Box className="w-1/5 min-w-40" key={index}>
+                        <Box>
+                            <img className="h-52 object-cover" src="http://localhost:8989/image/4"/>
+                        </Box>
+                        <Box>
+                            <p className="text-black">{item.name}</p>
+                            <p className="text-black">{item.price}</p>
+                        </Box>
                     </Box>
                 ))
             }
