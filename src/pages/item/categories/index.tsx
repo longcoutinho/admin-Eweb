@@ -26,7 +26,7 @@ export default function Categories() {
         <Page title={PAGE_TITLE.HOME} menuIndex={1}>
             <ItemTypeComponent display={true} level={1} parentId={null} changeParentChooseItemId={changeParentChooseItemId}></ItemTypeComponent>
             <ItemTypeComponent display={true} level={2} parentId={itemLevel1} changeParentChooseItemId={changeParentChooseItemId}></ItemTypeComponent>
-            <AllItem></AllItem>
+            <AllItem lv1Id={itemLevel1} lv2Id={itemLevel2}></AllItem>
         </Page>
     );
 }

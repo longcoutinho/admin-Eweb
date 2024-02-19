@@ -20,3 +20,12 @@ export const createNewItem = async (request: FormData) : Promise<any> => {
     const url = Backend.ITEM_SERVICE + '/create';
     return doFileRequest(url, request);
 }
+
+export const getAllItem = async (lv1Id: number, lv2Id: number | null) : Promise<any> => {
+    const url = Backend.ITEM_SERVICE;
+    const params = {
+        lv1Id: lv1Id,
+        lv2Id: lv2Id
+    }
+    return doGetRequest(url, params);
+}

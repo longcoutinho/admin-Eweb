@@ -10,7 +10,7 @@ export interface Item {
   price: number;
   name : string;
   lv1Id: number;
-  lv2Id: number | null;
+  lv2Id: number;
   listImages: File;
 }
 

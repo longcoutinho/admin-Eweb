@@ -39,7 +39,7 @@ export default function ItemTypeComponent(props: any) {
         setChosenId(newId);
         props.changeParentChooseItemId(newId, props.level);
         if (props.level == 1) {
-            props.changeParentChooseItemId(undefined, 2);
+            props.changeParentChooseItemId(null, 2);
         }
     }
 

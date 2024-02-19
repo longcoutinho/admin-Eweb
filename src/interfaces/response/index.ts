@@ -12,11 +12,12 @@ export interface Post {
   introduction: string;
 }
 export interface Item {
-  id: number,
-  title: string,
-  price: number,
-  titleImageUrlStream: string,
-  introduction: string,
+  id: number;
+  price: number;
+  name : string;
+  lv1Id: number;
+  lv2Id: number | null;
+  listImages: string[];
 }
 
 export interface Course {
