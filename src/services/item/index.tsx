@@ -7,11 +7,33 @@ export const createNewItemType = async (request: ItemType) : Promise<any> => {
     return doPostRequest(url, request);
 }
 
+export const editItemType = async (id: number, name: string, code: string) : Promise<any> => {
+    const url = Backend.ITEM_SERVICE + '/type/edit/' + id.toString();
+    const request = {
+        name: name,
+        code: code
+    }
+    return doPostRequest(url, request);
+}
+
+export const deleteItemType = async (id: number) : Promise<any> => {
+    const url = Backend.ITEM_SERVICE + '/type/delete/' + id.toString();
+    return doPostRequest(url, null);
+}
+
 export const getItemTypeByLevelAndParentId = async (level: number, parentId: number | null) : Promise<any> => {
     const url = Backend.ITEM_SERVICE + '/type';
     const params = {
         level: level,
         parentId: parentId
+    }
+    return doGetRequest(url, params);
+}
+
+export const getItemTypeById = async (id: number) : Promise<any> => {
+    const url = Backend.ITEM_SERVICE + '/type';
+    const params = {
+        id: id,
     }
     return doGetRequest(url, params);
 }
