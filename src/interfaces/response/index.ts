@@ -17,7 +17,7 @@ export interface Item {
   name : string;
   lv1Id: number;
   lv2Id: number | null;
-  listImages: string[];
+  listImageIds: number[];
 }
 
 export interface Course {

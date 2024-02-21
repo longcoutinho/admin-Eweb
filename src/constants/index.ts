@@ -4,7 +4,8 @@ import {PATH_PAGE} from "@/routes/path";
 export enum Backend {
   URL = 'https://fengshui.ntg55.click',
   USER_SERVICE = "http://localhost:8989/user",
-  ITEM_SERVICE = "http://localhost:8989/item"
+  ITEM_SERVICE = "http://localhost:8989/item",
+  IMAGE_SERVICE = "http://localhost:8989/image"
 }
 
 export enum HTTP_STATUS {

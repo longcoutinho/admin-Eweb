@@ -15,7 +15,7 @@ export default function AddItemComponent() {
     const [itemLevel2, setItemLevel2] = useState<number>();
     const [itemName, setItemName] = useState('');
     const [itemPrice, setItemPrice] = useState('');
-    const [itemListImages, setItemListImages] = useState<File | null>(null);
+    const [itemListImages, setItemListImages] = useState<FileList>();
 
     const changeParentChooseItemId = (itemId: number, level: number) => {
         if (level == 1) {
@@ -32,7 +32,11 @@ export default function AddItemComponent() {
         request.append('name', itemName);
         if (itemLevel1 != undefined) request.append('lv1Id', itemLevel1.toString());
         if (itemLevel2 != undefined) request.append('lv2Id', itemLevel2.toString());
-        if (itemListImages != null) request.append('listImages', itemListImages);
+        if (itemListImages != null) {
+            Array.from(itemListImages).forEach((image) => {
+                request.append('listImages', image);
+            })
+        }
 
         createNewItem(request).then(
             (res) => {
@@ -67,8 +71,8 @@ export default function AddItemComponent() {
             </Box>
             <Box>
                 <p className="label">Item Image</p>
-                <Input type="file" onChange={(e :React.ChangeEvent<HTMLInputElement>) => {
-                    if (e.target.files != null) setItemListImages(e.target.files[0]);
+                <Input type="file" inputProps={{ multiple: true }} onChange={(e :React.ChangeEvent<HTMLInputElement>) => {
+                    if (e.target.files != null) setItemListImages(e.target.files);
                 }}></Input>
             </Box>
             <Box>
