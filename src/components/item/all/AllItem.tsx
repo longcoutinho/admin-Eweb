@@ -34,7 +34,7 @@ export default function AllItem(props: any) {
                 listItems.map((item, index) => (
                     <Box className="w-1/5 min-w-40" key={index}>
                         <Box>
-                            <img className="h-52 object-cover" src={Backend.IMAGE_SERVICE + '/' + item.listImageIds[0]}/>
+                            <img className="h-52 object-cover" src={Backend.IMAGE_SERVICE + '/' + item.listImageIds[0].toString()}/>
                         </Box>
                         <Box>
                             <p className="text-black">{item.name}</p>
