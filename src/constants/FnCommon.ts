@@ -93,8 +93,11 @@ export const deleteItemByIndex = (index: number): ItemToCart[] => {
     return left.concat(right);
 }
 
-export const redirectUrl = (router: NextRouter, url: string) => {
-    router.push(url);
+export const redirectUrl = (router: NextRouter, url: string, params: any) => {
+    router.push({
+        pathname: url,
+        query: params
+    });
 }
 
 export const isNullOrEmpty = (str: string): boolean => {

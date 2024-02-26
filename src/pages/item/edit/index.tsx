@@ -8,6 +8,7 @@ import "@/constants/FnCommon"
 import React, {useState} from "react";
 import ItemTypeComponent from "@/components/item/categories/all/ItemType";
 import AllItem from "@/components/item/all/AllItem";
+import EditItem from "@/components/item/all/edit/EditItem";
 
 export default function ListItem() {
     const [itemLevel1, setItemLevel1] = useState<number | null>(null);
@@ -23,10 +24,8 @@ export default function ListItem() {
     }
 
     return (
-        <Page title={PAGE_TITLE.ALL_PRODUCTS} menuIndex={1}>
-            <ItemTypeComponent display={false} level={1} parentId={null} changeParentChooseItemId={changeParentChooseItemId}></ItemTypeComponent>
-            <ItemTypeComponent display={false} level={2} parentId={itemLevel1} changeParentChooseItemId={changeParentChooseItemId}></ItemTypeComponent>
-            <AllItem lv1Id={itemLevel1} lv2Id={itemLevel2}></AllItem>
+        <Page title={PAGE_TITLE.EDIT_ITEM} menuIndex={1}>
+            <EditItem></EditItem>
         </Page>
-  );
+    );
 }

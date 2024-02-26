@@ -10,8 +10,8 @@ import ItemTypeComponent from "@/components/item/categories/all/ItemType";
 import AllItem from "@/components/item/all/AllItem";
 
 export default function Categories() {
-    const [itemLevel1, setItemLevel1] = useState<number>();
-    const [itemLevel2, setItemLevel2] = useState<number>();
+    const [itemLevel1, setItemLevel1] = useState<number | null>(null);
+    const [itemLevel2, setItemLevel2] = useState<number | null>(null);
 
     const changeParentChooseItemId = (itemId: number, level: number) => {
         if (level == 1) {

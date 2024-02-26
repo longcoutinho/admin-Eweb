@@ -2,12 +2,17 @@ import {Course} from "@/interfaces/response";
 import {PATH_PAGE} from "@/routes/path";
 
 export enum Backend {
-  URL = 'https://fengshui.ntg55.click',
-  USER_SERVICE = "http://localhost:8989/user",
-  ITEM_SERVICE = "http://localhost:8989/item",
-  IMAGE_SERVICE = "http://localhost:8989/image"
+  BASE_URL = 'http://localhost:8989',
+  USER_SERVICE = BASE_URL + '/user',
+  ITEM_SERVICE = BASE_URL + '/item',
+  IMAGE_SERVICE = BASE_URL + '/image',
 }
 
+export enum Frontend {
+  BASE_URL = 'http://localhost:3000',
+  ADD_ITEM_PAGE = BASE_URL + '/item/add',
+  EDIT_ITEM_PAGE = BASE_URL + '/item/edit',
+}
 export enum HTTP_STATUS {
   OK = 200,
 }
@@ -15,6 +20,8 @@ export enum PAGE_TITLE {
   PREFIX = "",
   HOME = "Home",
   LAPLA = "Lap la so phong thuy",
+  ALL_PRODUCTS = "All Products",
+  EDIT_ITEM = "Edit Item"
 }
 
 export const HomePage = {

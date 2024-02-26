@@ -22,13 +22,19 @@ export default function ItemTypeComponent(props: any) {
     const [chosenId, setChosenId] = useState<number>();
 
     useEffect(() => {
+        if (props.chosenId !== undefined) {
+            setChosenId(props.chosenId);
+        }
+    }, [props.chosenId])
+
+    useEffect(() => {
         if (props.level !== undefined && props.parentId !== undefined) {
             renderListItem();
-            setChosenId(props.parentId);
         }
     }, [props.level, props.parentId])
 
     const renderListItem = () => {
+        console.log('kk');
         getItemTypeByLevelAndParentId(props.level, props.parentId).then(
             (res) => {
                 if (res.status == HTTP_STATUS.OK) {
